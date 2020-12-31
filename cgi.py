@@ -1,6 +1,5 @@
 import cgi
 import socket
-from time import ctime
 HOST = 'localhost'
 PORT = 12345
 BUFSIZ = 1024
