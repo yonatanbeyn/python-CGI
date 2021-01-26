@@ -4,16 +4,18 @@ import socket
 HOST = 'localhost'
 port = 12345
 buffersize = 1024
-logger = logging.getLogger(__name__)#__name__,  means  every instance of this socket can log  to a file .
-# and the logger name will be the name of the logger instance.
-c_handler = logging.StreamHandler()
-f_handler = logging.FileHandler('file.log')
-c_handler.setLevel(logging.WARNING)
-f_handler.setLevel(logging.ERROR)
+
+
 
 class WebServer():
     """web server based on a socket. http capsulation """
     def __init__(self,port=8080):#default port for web server
+        self._logger = logging.getLogger(__name__)#__name__,  means  every instance of this socket can log  to a file .
+                                                # and the logger name will be the name of the logger instance.
+        self.c_handler = logging.StreamHandler()
+        self.f_handler = logging.FileHandler('file.log')
+        self.c_handler.setLevel(logging.WARNING)
+        self.f_handler.setLevel(logging.ERROR)
         self.port=port
         self.host=HOST
     def sock_start(self):
