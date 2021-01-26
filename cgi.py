@@ -26,6 +26,7 @@ class WebServer():
         #possible port in use by other applications
         except Exception as e:
             print("Error: Could not bind to port {port}".format(port=self.port))
+             logging.error("Error occurred", exc_info=True)
             self.shutdown()#kill socket
             sys.exit(1)
     
