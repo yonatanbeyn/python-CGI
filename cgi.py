@@ -31,5 +31,15 @@ class WebServer():
              logging.error("Error occurred", exc_info=True)
             self.shutdown()#kill socket
             sys.exit(1)
-                self._listen() # Start listening for connections# listen called here
+                self.listen_sock() # Start listening for connections# listen called here
+ def listen_sock(self):
+        
+        """
+        Listens on self.port for any incoming connections
+        """
+        self.socket.listen(5) 
+        while True:
+            (client, address) = self.socket.accept()
+            print("Recieved connection from {addr}".format(addr=address))
+            threading.Thread(target=self._handle_client, args=(client, address)).start()            
     
