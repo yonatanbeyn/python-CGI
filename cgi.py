@@ -31,4 +31,5 @@ class WebServer():
              logging.error("Error occurred", exc_info=True)
             self.shutdown()#kill socket
             sys.exit(1)
+                self._listen() # Start listening for connections# listen called here
     
