@@ -75,15 +75,15 @@ class WebServer():
             if not data :
                 break
             request_method=data.split(' ')[0] #the first but return as string
-            print(request_method)
+            print(request_method)#get,post ,put ,
             
             print(data[3:])
             print(type(data))
-            #print(len(data))
+            #print(len(data)) for debug
             print(type(request_method))
             if request_method=='GET' or request_method == 'HEAD':
                 print('hello')
-                file_requested=data.split(' ')[1]
+                file_requested=data.split(' ')[1].  # after get
                 print(file_requested)
                 if file_requested=='/':
                     file_requested='index.html'
