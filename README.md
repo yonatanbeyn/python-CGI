@@ -1,1 +1,1 @@
-# python-CGI
+# python-socket-based,web-server-httpbased
