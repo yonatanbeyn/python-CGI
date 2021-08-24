@@ -54,7 +54,7 @@ class WebServer():
         header += 'Connection: close\n\n' # Signal that connection will be closed after completing the request
         return header        
         
-#WebServer().start()        
+        
     def _listen(self):
         
         """
@@ -120,5 +120,5 @@ class WebServer():
                     break
                 else:
                     print("Unknown HTTP request method: {method}".format(method=request_method)) 
-x=WebServer(8012).start()
-#print(x._logger)
+_server=WebServer(8012).start()
+
