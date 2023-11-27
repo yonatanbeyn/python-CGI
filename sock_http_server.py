@@ -83,7 +83,7 @@ class WebServer():
             print(type(request_method))
             if request_method=='GET' or request_method == 'HEAD':
                 print('hello')
-                file_requested=data.split(' ')[1].  # after get
+                file_requested=data.split(' ')[1] # after get
                 print(file_requested)
                 if file_requested=='/':
                     file_requested='index.html'
